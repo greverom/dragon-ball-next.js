@@ -32,7 +32,7 @@ export const useDragonBallCharacters = () => {
         };
 
         fetchCharacters();
-    }, []); 
+    }, ); 
 
     return { characters, loading, error };
 };
