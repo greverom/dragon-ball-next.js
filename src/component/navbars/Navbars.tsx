@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu"; 
+import ThemeSwitch from "../ThemeSwitch";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -50,9 +51,12 @@ const Navbar = () => {
           </li>
         </ul>
 
-        <button onClick={toggleMenu} className="md:hidden text-white">
-          {isOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+        <div className="flex items-center space-x-4">
+          <ThemeSwitch />
+          <button onClick={toggleMenu} className="md:hidden text-white">
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />

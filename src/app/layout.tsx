@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/component/navbars/Navbars";
 import { LoadingProvider} from "@/context/LoadingContext";
 import GlobalLoader from "@/component/GlobalLoader";
+import { ThemeProvider } from "@/context/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,13 +29,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" >
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-      <LoadingProvider> 
-        <Navbar />
-        <GlobalLoader />
-          {children}
-      </LoadingProvider>
+        <ThemeProvider> 
+          <LoadingProvider> 
+            <Navbar />
+            <GlobalLoader />
+            {children}
+          </LoadingProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

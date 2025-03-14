@@ -19,19 +19,20 @@ export const SliderPassword: React.FC<SliderProps> = ({ value, onChange })=> {
     };
 
     return (
-        <div className="flex flex-col">
-
-            <span className="text-gray-700">Longitud: {length}</span>
-
-            <input 
-                className="w-full cursor-pointer"
-                type="range"
-                min="6" 
-                max="16" 
-                step="1" 
-                value={length}
-                onChange={handleChange}
-            />
+        <div className="flex flex-col transition">
+          <span className="text-[rgb(var(--text-color))] font-medium transition">
+            Longitud: {length}
+          </span>
+      
+          <input 
+            className="w-full cursor-pointer"
+            type="range"
+            min="6" 
+            max="16" 
+            step="1" 
+            value={length}
+            onChange={handleChange}
+          />
         </div>
-    );
+      );
 };

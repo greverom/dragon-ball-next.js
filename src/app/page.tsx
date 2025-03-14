@@ -2,17 +2,22 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="flex flex-col items-center justify-center min-h-screen bg-gray-50 p-10">
-      <h1 className="text-4xl text-gray-600 font-bold text-center mb-5">Bienvenido</h1>
-      <p className="text-xl text-gray-600 text-center mb-8">Selecciona una opción:</p>
+    <main className="flex flex-col items-center justify-start min-h-screen bg-background text-foreground p-10 transition-colors duration-300 mt-20">
+      <h1 className="text-4xl font-bold text-center mb-3">Bienvenido</h1>
+      <p className="text-xl text-center mb-8">Selecciona una opción:</p>
 
       <div className="flex gap-4">
-        
-        <Link href="/dragonball" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+        <Link 
+          href="/dragonball" 
+          className="px-5 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+        >
           Página Dragon Ball
         </Link>
 
-        <Link href="/generator" className="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700">
+        <Link 
+          href="/generator" 
+          className="px-5 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+        >
           Generador de Contraseñas
         </Link>
       </div>
