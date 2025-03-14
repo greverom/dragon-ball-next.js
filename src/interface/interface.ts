@@ -9,7 +9,26 @@ export interface Character {
     image: string;
     affiliation: string;
     deletedAt: string | null; 
+    originPlanet?: OriginPlanet;
+    transformations?: Transformation[];
 }
+
+export interface OriginPlanet {
+    id: number;
+    name: string;
+    isDestroyed: boolean;
+    description: string;
+    image: string;
+    deletedAt: string | null;
+  }
+  
+  export interface Transformation {
+    id: number;
+    name: string;
+    image: string;
+    ki: string;
+    deletedAt: string | null;
+  }
 
 export interface CharacterResponse {
     items: Character[]; 

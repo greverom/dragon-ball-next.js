@@ -31,3 +31,17 @@ export const fetchDragonBallCharacters = async () => {
     return null;
   }
 };
+
+export const fetchDragonBallCharacterById = async (id: number) => {
+  try {
+    if (!API_URL) throw new Error("NEXT_PUBLIC_API_URL no está definida en .env.local");
+
+    const response = await fetch(`${API_URL}/${id}`, { cache: "no-store" }); 
+    if (!response.ok) throw new Error("Error al obtener el personaje desde la API externa");
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error al obtener el personaje por ID desde la API externa", error);
+    return null;
+  }
+};
