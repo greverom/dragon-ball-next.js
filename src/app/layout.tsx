@@ -1,7 +1,10 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/component/navbars/Navbars";
+import { LoadingProvider} from "@/context/LoadingContext";
+import GlobalLoader from "@/component/GlobalLoader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +21,7 @@ export const metadata: Metadata = {
   description: "curso Next.js",
 };
 
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,8 +30,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <LoadingProvider> 
         <Navbar />
-        {children}
+        <GlobalLoader />
+          {children}
+      </LoadingProvider>
       </body>
     </html>
   );

@@ -15,12 +15,21 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 p-4 shadow-lg">
-      <div className="max-w-7xl mx-auto flex justify-between items-center">
+    <nav className="bg-blue-600 p-5 shadow-lg">
+      <div className="max-w-8xl mx-auto flex justify-between items-center">
 
         <h1 className="text-white text-2xl font-bold">Mi App</h1>
 
         <ul className="hidden md:flex space-x-4">
+        <li>
+            <Link
+              href="/"
+              className={`text-white px-3 py-2 rounded-lg 
+              ${pathname === "/" ? "bg-blue-800" : "hover:bg-blue-700"}`}
+            >Inicio
+            </Link>
+          </li>
+
           <li>
             <Link
               href="/dragonball"

@@ -15,6 +15,16 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
 
   return (
     <ul className="md:hidden mt-2 p-4 space-y-2 text-left">
+       <li>
+        <Link
+          href="/"
+          className={`block text-white px-3 py-2 rounded-lg
+          ${pathname === "/" ? "font-bold" : "hover:bg-blue-600"}`}
+          onClick={toggleMenu}
+        >
+          Home
+        </Link>
+      </li>
       <li>
         <Link
           href="/dragonball"

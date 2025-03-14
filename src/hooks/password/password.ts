@@ -7,7 +7,6 @@ interface PasswordSettings {
     symbols: boolean;
 }
 
-
 export const usePassword = () => {
     const [password, setPassword] = useState("");
 

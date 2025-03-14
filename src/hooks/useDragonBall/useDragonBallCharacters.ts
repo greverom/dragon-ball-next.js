@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 import { fetchDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character, CharacterResponse } from "@/interface/interface";
-import { useLoading } from "../loading/useLoading";
+import { useLoading } from "@/context/LoadingContext";
+
 
 export const useDragonBallCharacters = () => {
-    const { loading, startLoading, stopLoading } = useLoading();
+    const { startLoading, stopLoading } = useLoading();
     const [characters, setCharacters] = useState<Character[]>([]);
     const [error, setError] = useState<string | null>(null);
     const hasFetchedData = useRef(false);
@@ -14,8 +15,8 @@ export const useDragonBallCharacters = () => {
         hasFetchedData.current = true;
 
         const fetchCharacters = async () => {
+            startLoading();
             try {
-                startLoading(); 
                 const data: CharacterResponse = await fetchDragonBallCharacters();
                 if (data && data.items) {
                     setCharacters(data.items);
@@ -34,5 +35,5 @@ export const useDragonBallCharacters = () => {
         fetchCharacters();
     }, ); 
 
-    return { characters, loading, error };
+    return { characters, error };
 };
