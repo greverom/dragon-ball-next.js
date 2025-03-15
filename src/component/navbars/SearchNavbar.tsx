@@ -1,14 +1,9 @@
 "use client";
 
-import { Character } from "@/interface/interface";
 import { useSearchCharacters } from "@/hooks/useDragonBall/useSearchCharacter";
 
-interface SearchNavbarProps {
-  characters: Character[];
-}
-
-const SearchNavbar = ({ characters }: SearchNavbarProps) => {
-    const { searchQuery, setSearchQuery, handleSearch } = useSearchCharacters(characters);
+const SearchNavbar = () => {
+    const { searchQuery, setSearchQuery, handleSearch } = useSearchCharacters();
 
   return (
     <form onSubmit={handleSearch} className="relative">

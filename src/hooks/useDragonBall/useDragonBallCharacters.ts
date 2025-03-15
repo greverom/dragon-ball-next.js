@@ -1,39 +1,39 @@
-import { useState, useEffect, useRef } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { fetchDragonBallCharacters } from "@/services/dragonBallApi";
-import { Character, CharacterResponse } from "@/interface/interface";
+import { Character } from "@/interface/interface";
 import { useLoading } from "@/context/LoadingContext";
 
-
 export const useDragonBallCharacters = () => {
-    const { startLoading, stopLoading } = useLoading();
-    const [characters, setCharacters] = useState<Character[]>([]);
-    const [error, setError] = useState<string | null>(null);
-    const hasFetchedData = useRef(false);
+  const { startLoading, stopLoading } = useLoading();
+  const [characters, setCharacters] = useState<Character[]>([]);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [error, setError] = useState<string | null>(null);
 
-    useEffect(() => {
-        if (hasFetchedData.current) return;
-        hasFetchedData.current = true;
+  useEffect(() => {
+    const fetchCharacters = async () => {
+      startLoading();
+      try {
+        const data = await fetchDragonBallCharacters(page, 10); 
+        if (data && data.items) {
+          setCharacters(data.items);
+          setTotalPages(data.totalPages || 1);
+        } else {
+          console.error("Los personajes no se obtuvieron correctamente", data);
+          setError("No se encontraron personajes");
+        }
+      } catch (err) {
+        console.error("Error al cargar los personajes:", err);
+        setError("Error al cargar los personajes");
+      } finally {
+        stopLoading();
+      }
+    };
 
-        const fetchCharacters = async () => {
-            startLoading();
-            try {
-                const data: CharacterResponse = await fetchDragonBallCharacters();
-                if (data && data.items) {
-                    setCharacters(data.items);
-                } else {
-                    console.error("Los personajes no se obtuvieron correctamente", data);
-                    setError("No se encontraron personajes");
-                }
-            } catch (err) {
-                console.error("Error al cargar los personajes:", err);
-                setError("Error al cargar los personajes");
-            } finally {
-                stopLoading();
-            }
-        };
+    fetchCharacters();
+  }, [page]); 
 
-        fetchCharacters();
-    }, ); 
-
-    return { characters, error };
+  return { characters, page, setPage, totalPages, error };
 };

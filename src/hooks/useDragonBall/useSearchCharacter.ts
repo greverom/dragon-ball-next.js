@@ -1,37 +1,32 @@
-"use client";
-
 import { useState } from "react";
-import { Character } from "@/interface/interface";
 import { useRouter } from "next/navigation";
+import { searchDragonBallCharacters } from "@/services/dragonBallApi"; 
 
-
-export const useSearchCharacters = (characters: Character[]) => {
+export const useSearchCharacters = () => {
   const [searchQuery, setSearchQuery] = useState("");
+
   const router = useRouter();
 
-  const searchCharacters = (query: string) => {
-    const cleanQuery = query.trim().toLowerCase();
-    if (!cleanQuery) return [];
-
-    return characters.filter((char) =>
-      char.name.toLowerCase().includes(cleanQuery)
-    );
-  };
-
-  const handleSearch = (event: React.FormEvent) => {
+  const handleSearch = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!searchQuery.trim()) return;
 
-    const foundCharacters = searchCharacters(searchQuery); 
+    try {
+      console.log("Buscando:", searchQuery);
+      const results = await searchDragonBallCharacters(searchQuery);
 
-    if (foundCharacters.length > 0) {
-      router.push(`/dragonball/${foundCharacters[0].id}`); 
-    } else {
-      console.log("Personaje no encontrado");
+      if (results && results.length > 0) {
+        router.push(`/dragonball/${results[0].id}`);
+      } else {
+        console.error("Personaje no encontrado, intenta con otro nombre.");
+      }
+    } catch (error) {
+      console.error("Error en la búsqueda:", error);
+    } finally {
+
+      setSearchQuery("");
     }
-
-    setSearchQuery("");
   };
 
-  return { searchQuery, setSearchQuery, searchCharacters, handleSearch };
+  return { searchQuery, setSearchQuery, handleSearch };
 };

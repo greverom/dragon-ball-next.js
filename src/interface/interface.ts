@@ -31,5 +31,6 @@ export interface OriginPlanet {
   }
 
 export interface CharacterResponse {
+  total: number;
   items: Character[]; 
 }
