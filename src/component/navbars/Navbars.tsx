@@ -6,9 +6,13 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu"; 
 import ThemeSwitch from "../ThemeSwitch";
+import SearchNavbar from "./SearchNavbar";
+import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallCharacters";
+
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { characters } = useDragonBallCharacters();
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -51,6 +55,7 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          <SearchNavbar characters={characters}/> 
 
           <ThemeSwitch />
 
