@@ -1,5 +1,4 @@
-"use client";
-
+import Image from "next/image";
 import React from "react";
 import { Character } from "@/interface/interface";
 
@@ -12,12 +11,15 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
     <div className="max-w-6xl w-full bg-card text-card-foreground p-6">
       <div className="flex flex-col md:flex-row md:items-center">
         
-        <div className="flex justify-center md:justify-start ">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+        <div className="flex justify-center md:justify-start">
+          <Image
             src={character?.image}
             alt={character?.name}
+            width={160}
+            height={160}
+            layout="intrinsic" 
             className="w-32 md:w-40 h-auto object-contain md:mr-2 image-blur"
+            priority={false}  
           />
         </div>
 

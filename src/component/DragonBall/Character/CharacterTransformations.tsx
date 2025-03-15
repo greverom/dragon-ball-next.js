@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Character } from "@/interface/interface";
+import imageLoader from "@/utils/imageLoader";
 
 interface CharacterTransformationsProps {
   character: Character;
@@ -17,13 +19,18 @@ export const CharacterTransformations: React.FC<CharacterTransformationsProps> =
       <h2 className="text-2xl font-bold text-center mb-4">Transformaciones</h2>
 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 justify-center">
-        {character.transformations.map((transformation) => (
+        {character.transformations.map((transformation, index) => (
           <div key={transformation.id} className="flex flex-col items-center bg-card text-card-foreground p-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
+            <Image
+              loader={imageLoader}
               src={transformation.image}
               alt={transformation.name}
+              width={128}
+              height={128}
               className="w-32 h-32 object-contain rounded-lg"
+              unoptimized
+              priority={index === 0}  
+              loading={index === 0 ? "eager" : "lazy"} 
             />
             <p className="mt-1 font-medium">{transformation.name}</p>
           </div>
