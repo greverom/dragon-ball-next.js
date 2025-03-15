@@ -12,7 +12,6 @@ export const useSearchCharacters = () => {
     if (!searchQuery.trim()) return;
 
     try {
-      console.log("Buscando:", searchQuery);
       const results = await searchDragonBallCharacters(searchQuery);
 
       if (results && results.length > 0) {
