@@ -7,6 +7,8 @@ import { useLoading } from "@/context/LoadingContext";
 
 export const useDragonBallCharacters = () => {
   const { startLoading, stopLoading } = useLoading();
+  const [isFirstLoad, setIsFirstLoad] = useState(true); 
+  const [isLoaded, setIsLoaded] = useState(false);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -16,6 +18,7 @@ export const useDragonBallCharacters = () => {
     const fetchCharacters = async () => {
       startLoading();
       try {
+        setIsLoaded(false);
         const data = await getDragonBallCharacters(page, 12);
         
         if (data?.items && data?.meta) {
@@ -35,5 +38,12 @@ export const useDragonBallCharacters = () => {
     fetchCharacters();
   }, [page]); 
 
-  return { characters, page, setPage, totalPages, error };
+  const handleImageLoad = () => {
+    setIsLoaded(true);
+    if (isFirstLoad) {
+      setIsFirstLoad(false); 
+    }
+  };
+
+  return { characters, page, setPage, totalPages, error, isLoaded, isFirstLoad, handleImageLoad };
 };
