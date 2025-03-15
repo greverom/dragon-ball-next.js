@@ -4,18 +4,36 @@
   --background: 255, 255, 255;
   --foreground: 23, 23, 23;
   --secondary-foreground: 10, 10, 18;
+
   --border-color: 80, 80, 80;
+
   --text-color: 23, 23, 23; 
   --secondary-text: 80, 80, 80; 
+
+  --button-bg: 23, 23, 23;
+  --button-text: 255, 255, 255;
 }
 
 [data-theme="dark"] {
   --background: 60, 60, 60;
   --foreground: 237, 237, 237;
   --secondary-foreground: 161, 161, 170;
+
   --border-color: 80, 80, 80;
+
   --text-color: 237, 237, 237; 
   --secondary-text: 161, 161, 170;
+
+  --button-bg: 237, 237, 237;
+  --button-text: 23, 23, 23;
+}
+
+.image-blur {
+  filter: drop-shadow(0px 0px 15px rgba(0, 0, 0, 0.5)); 
+}
+
+[data-theme="dark"] .image-blur {
+  filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.3)); 
 }
 
 body {

@@ -16,7 +16,7 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
         <img
           src={character?.image}
           alt={character?.name}
-          className="w-40 h-auto object-contain rounded-lg"
+          className="w-50 h-auto object-contain rounded-lg"
         />
       </div>
 
