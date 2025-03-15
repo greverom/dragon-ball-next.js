@@ -8,7 +8,6 @@ const CharacterList = () => {
 
   return (
     <div className="flex flex-col items-center">
-      {/* 📌 Grid de personajes */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-6">
         {characters.map((character) => (
           <Link href={`/dragonball/${character.id}`} key={character.id}>
@@ -17,7 +16,7 @@ const CharacterList = () => {
               <img
                 src={character.image}
                 alt={character.name}
-                className="w-40 h-40 object-contain rounded-lg"
+                className="w-60 h-60 object-contain rounded-lg"
               />
               <h2 className="text-lg font-semibold mt-2">{character.name}</h2>
             </div>
@@ -25,14 +24,13 @@ const CharacterList = () => {
         ))}
       </div>
 
-      {/* 📌 Paginación */}
       <div className="flex items-center space-x-4">
         <button
           onClick={() => setPage((prev) => Math.max(prev - 1, 1))}
           disabled={page === 1}
-          className="px-4 py-2 bg-gray-500 text-white rounded-lg disabled:opacity-50"
+          className="px-4 py-2 bg-gray-500 dark:bg-gray-700 text-white dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50"
         >
-          ⬅ Anterior
+          Anterior
         </button>
 
         <span className="text-lg font-medium">
@@ -42,9 +40,9 @@ const CharacterList = () => {
         <button
           onClick={() => setPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={page === totalPages}
-          className="px-4 py-2 bg-gray-500 text-white rounded-lg disabled:opacity-50"
+          className="px-4 py-2 bg-gray-500  dark:bg-gray-700 text-white dark:text-white rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 disabled:opacity-50"
         >
-          Siguiente ➡
+          Siguiente 
         </button>
       </div>
     </div>

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { fetchDragonBallCharacters } from "@/services/dragonBallApi";
+import { getDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character } from "@/interface/interface";
 import { useLoading } from "@/context/LoadingContext";
 
@@ -16,12 +16,12 @@ export const useDragonBallCharacters = () => {
     const fetchCharacters = async () => {
       startLoading();
       try {
-        const data = await fetchDragonBallCharacters(page, 10); 
-        if (data && data.items) {
-          setCharacters(data.items);
-          setTotalPages(data.totalPages || 1);
+        const data = await getDragonBallCharacters(page, 12);
+        
+        if (data?.items && data?.meta) {
+          setCharacters(data.items); 
+          setTotalPages(data.meta.totalPages); 
         } else {
-          console.error("Los personajes no se obtuvieron correctamente", data);
           setError("No se encontraron personajes");
         }
       } catch (err) {
