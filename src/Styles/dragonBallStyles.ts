@@ -29,7 +29,7 @@ export const Title = styled.h1`
 `;
 
 export const HoverTitle = styled.div`
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
@@ -38,24 +38,39 @@ export const HoverTitle = styled.div`
   -webkit-text-fill-color: transparent;
 
   position: absolute;
-  top: calc(100% + 10px);
-  left: 50%;
-  transform: translateX(-20%) scale(0.9);
+  top: calc(100% + 20px);
+  left: 20%;
+  transform: scale(0.5);
   white-space: nowrap;
 
   opacity: 0;
   transition: opacity 0.4s ease, transform 0.4s ease;
 
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
-  transform: perspective(300px) rotateX(15deg);
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 
   @media (prefers-color-scheme: dark) {
-    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.5);
   }
 
   pointer-events: none; 
   .hover-parent:hover > a + & {
     opacity: 1;
-    transform: translateX(-50%) scale(1);
+    transform: scale(1)
+  }
+`;
+
+export const HoverImageContainer = styled.div`
+  position: absolute;
+  top: 550%; 
+  left: 50%; 
+  transform: translate(80%, 0) scale(2.5);
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  background: transparent;
+
+  .hover-parent:hover & {
+    opacity: 1;
+    transform: translate(80%, 0) scale(3); 
   }
 `;

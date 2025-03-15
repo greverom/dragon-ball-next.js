@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { HoverTitle } from "../Styles/dragonBallStyles";
+import { HoverTitle } from "../../../Styles/dragonBallStyles";
 
 interface HoverTitleComponentProps {
   text: string;

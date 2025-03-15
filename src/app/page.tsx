@@ -1,7 +1,12 @@
 "use client"
 
-import HoverTitleComponent from '@/component/DragonBall/DragonBallTitle/HoverTitle';
+import Loader from '@/component/ui/loaders';
+import dynamic from 'next/dynamic';
 import Link from 'next/link';
+import { Suspense } from 'react';
+
+const HoverImage = dynamic(() => import("@/component/DragonBall/DragonBallTitle/HoverImage"));
+const HoverTitleComponent = dynamic(() => import("@/component/DragonBall/DragonBallTitle/HoverTitle"));
 
 export default function Home() {
   return (
@@ -17,7 +22,13 @@ export default function Home() {
           >
             Página Dragon Ball
           </Link>
-          <HoverTitleComponent text="Dragon Ball Z" />
+          <Suspense fallback={<Loader />}>
+            <HoverTitleComponent text="Dragon Ball Z" />
+          </Suspense>
+
+          <Suspense fallback={<Loader />}>
+            <HoverImage />
+          </Suspense>
         </div>
 
         <div className="relative flex flex-col items-center w-[200px]">

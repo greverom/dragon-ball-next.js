@@ -4,11 +4,18 @@ const Loader = () => {
   return (
     <div className="flex justify-center items-center bg-transparent">
       <svg
-        className="w-12 h-12"
-        fill="hsl(228, 97%, 42%)"
-        viewBox="0 0 24 24"
-        xmlns="http://www.w3.org/2000/svg"
-      >
+          className="w-14 h-14"
+          fill="url(#dragonballGradient)"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+        <defs>
+          <linearGradient id="dragonballGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="rgba(255, 165, 0, 0.8)" />
+            <stop offset="100%" stopColor="rgba(255, 215, 0, 0.8)" />
+          </linearGradient>
+        </defs>
+
         <circle cx="4" cy="12" r="3">
           <animate
             id="spinner_qFRN"

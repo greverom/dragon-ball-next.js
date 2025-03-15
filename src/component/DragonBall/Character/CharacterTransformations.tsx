@@ -32,3 +32,5 @@ export const CharacterTransformations: React.FC<CharacterTransformationsProps> =
     </div>
   );
 };
+
+export default CharacterTransformations;

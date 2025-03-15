@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Title } from "../Styles/dragonBallStyles";
+import { Title } from "../../../Styles/dragonBallStyles";
 
 
 interface DragonBallTitleProps {

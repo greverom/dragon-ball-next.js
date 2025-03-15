@@ -29,3 +29,4 @@ export const OriginPlanet: React.FC<OriginPlanetProps> = ({ character }) => {
     </div>
   );
 };
+export default OriginPlanet;

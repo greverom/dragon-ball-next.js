@@ -19,7 +19,7 @@ export const useDragonBallCharacters = () => {
       startLoading();
       try {
         setIsLoaded(false);
-        const data = await getDragonBallCharacters(page, 12);
+        const data = await getDragonBallCharacters(page, 8);
         
         if (data?.items && data?.meta) {
           setCharacters(data.items); 

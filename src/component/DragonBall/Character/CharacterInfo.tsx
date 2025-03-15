@@ -37,3 +37,5 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
     </div>
   );
 };
+
+export default CharacterInfo;

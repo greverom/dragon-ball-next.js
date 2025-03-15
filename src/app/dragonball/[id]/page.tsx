@@ -1,11 +1,13 @@
 "use client";
 
-import   React from "react";
-import { CharacterInfo } from "@/component/DragonBall/Character/CharacterInfo";
-import { CharacterTransformations } from "@/component/DragonBall/Character/CharacterTransformations";
-import { OriginPlanet } from "@/component/DragonBall/Character/OriginPlanet";
+import React, { Suspense } from "react";
+import dynamic from "next/dynamic";
 import { useCharacterDetail } from "@/hooks/useDragonBall/useDragonBallDetail";
-import   Loader from "@/component/ui/loaders";
+
+const CharacterInfo = dynamic(() => import("@/component/DragonBall/Character/CharacterInfo"));
+const CharacterTransformations = dynamic(() => import("@/component/DragonBall/Character/CharacterTransformations"));
+const OriginPlanet = dynamic(() => import("@/component/DragonBall/Character/OriginPlanet"));
+const Loader = dynamic(() => import("@/component/ui/loaders"), { ssr: false });
 
 const CharacterDetailPage = () => {
   const { character, loading, error } = useCharacterDetail();
@@ -24,9 +26,17 @@ const CharacterDetailPage = () => {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-7 bg-background text-foreground transition-colors">
-      <CharacterInfo character={character} />
-      <OriginPlanet character={character} />
-      <CharacterTransformations character={character} />
+      <Suspense fallback={<Loader />}>
+        <CharacterInfo character={character} />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <OriginPlanet character={character} />
+      </Suspense>
+
+      <Suspense fallback={<Loader />}>
+        <CharacterTransformations character={character} />
+      </Suspense>
     </div>
   );
 };
