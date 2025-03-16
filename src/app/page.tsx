@@ -1,12 +1,6 @@
 "use client"
 
-import Loader from '@/component/ui/loaders';
-import dynamic from 'next/dynamic';
 import Link from 'next/link';
-import { Suspense } from 'react';
-
-const HoverImage = dynamic(() => import("@/component/DragonBall/DragonBallTitle/HoverImage"));
-const HoverTitleComponent = dynamic(() => import("@/component/DragonBall/DragonBallTitle/HoverTitle"));
 
 export default function Home() {
   return (
@@ -22,13 +16,7 @@ export default function Home() {
           >
             Página Dragon Ball
           </Link>
-          <Suspense fallback={<Loader />}>
-            <HoverTitleComponent text="Dragon Ball Z" />
-          </Suspense>
 
-          <Suspense fallback={<Loader />}>
-            <HoverImage />
-          </Suspense>
         </div>
 
         <div className="relative flex flex-col items-center w-[200px]">
@@ -36,7 +24,7 @@ export default function Home() {
             href="/generator" 
             className="w-full text-center py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition block"
           >
-            Generador
+            Generador de password
           </Link>
         </div>
       </div>

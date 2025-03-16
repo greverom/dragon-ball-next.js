@@ -17,7 +17,6 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
             alt={character?.name}
             width={160}
             height={160}
-            layout="intrinsic" 
             className="w-32 md:w-40 h-auto object-contain md:mr-2 image-blur"
             priority={false}  
           />

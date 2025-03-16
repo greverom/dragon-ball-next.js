@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import { getDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character } from "@/interface/interface";
 import { useLoading } from "@/context/LoadingContext";
@@ -11,6 +11,7 @@ export const useDragonBallCharacters = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [characters, setCharacters] = useState<Character[]>([]);
   const [page, setPage] = useState(1);
+  const [limit, setLimit] = useState(4);
   const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState<string | null>(null);
 
@@ -19,7 +20,7 @@ export const useDragonBallCharacters = () => {
       startLoading();
       try {
         setIsLoaded(false);
-        const data = await getDragonBallCharacters(page, 8);
+        const data = await getDragonBallCharacters(page, limit);
         
         if (data?.items && data?.meta) {
           setCharacters(data.items); 
@@ -36,8 +37,14 @@ export const useDragonBallCharacters = () => {
     };
 
     fetchCharacters();
-  }, [page]); 
+  }, [page, limit]); 
 
+  useEffect(() => {
+    setIsFirstLoad(false);
+  }, []);
+
+  const memoizedCharacters = useMemo(() => characters, [characters]);
+  
   const handleImageLoad = () => {
     setIsLoaded(true);
     if (isFirstLoad) {
@@ -45,5 +52,5 @@ export const useDragonBallCharacters = () => {
     }
   };
 
-  return { characters, page, setPage, totalPages, error, isLoaded, isFirstLoad, handleImageLoad };
+  return { characters: memoizedCharacters, page, setPage, totalPages, error, isLoaded, isFirstLoad, handleImageLoad, limit, setLimit };
 };

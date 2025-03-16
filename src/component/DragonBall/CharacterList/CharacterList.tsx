@@ -5,7 +5,7 @@ import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallChar
 import Pagination from "../Pagination/Pagination";
 
 const CharacterList = () => {
-  const { characters, page, setPage, totalPages, isFirstLoad, handleImageLoad } = useDragonBallCharacters();
+  const { characters, page, setPage, totalPages, isFirstLoad, handleImageLoad, limit, setLimit } = useDragonBallCharacters();
 
   return (
     <div className="flex flex-col items-center">
@@ -26,7 +26,7 @@ const CharacterList = () => {
         ))}
       </div>
 
-      {!isFirstLoad && <Pagination page={page} setPage={setPage} totalPages={totalPages} />}
+      {!isFirstLoad && <Pagination page={page} setPage={setPage} totalPages={totalPages} limit={limit} setLimit={setLimit} />}
     </div>
   );
 };
