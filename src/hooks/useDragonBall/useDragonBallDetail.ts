@@ -17,7 +17,7 @@ export const useCharacterDetail = () => {
     if (!id) return;
 
     const getCharacter = async () => {
-      setLoading(true);
+      setLoading(true); 
       try {
         const data = await fetchDragonBallCharacterById(Number(id));
         if (data) {
@@ -29,7 +29,7 @@ export const useCharacterDetail = () => {
         console.log(error);
         setError("Error al obtener el personaje.");
       } finally {
-        setLoading(false);
+        setTimeout(() => setLoading(false), 500);  
       }
     };
 

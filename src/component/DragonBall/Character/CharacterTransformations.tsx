@@ -6,7 +6,7 @@ import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
 
 interface CharacterTransformationsProps {
-  character: Character;
+  character?: Character;
 }
 
 export const CharacterTransformations: React.FC<CharacterTransformationsProps> = ({ character }) => {

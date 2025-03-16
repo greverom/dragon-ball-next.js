@@ -3,10 +3,8 @@
 import { useState, useEffect, useMemo } from "react";
 import { getDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character } from "@/interface/interface";
-import { useLoading } from "@/context/LoadingContext";
 
 export const useDragonBallCharacters = () => {
-  const { startLoading, stopLoading } = useLoading();
   const [isFirstLoad, setIsFirstLoad] = useState(true); 
   const [isLoaded, setIsLoaded] = useState(false);
   const [characters, setCharacters] = useState<Character[]>([]);
@@ -17,7 +15,7 @@ export const useDragonBallCharacters = () => {
 
   useEffect(() => {
     const fetchCharacters = async () => {
-      startLoading();
+      setIsLoaded(false);
       try {
         setIsLoaded(false);
         const data = await getDragonBallCharacters(page, limit);
@@ -32,7 +30,7 @@ export const useDragonBallCharacters = () => {
         console.error("Error al cargar los personajes:", err);
         setError("Error al cargar los personajes");
       } finally {
-        stopLoading();
+        setIsLoaded(true);
       }
     };
 
@@ -52,5 +50,15 @@ export const useDragonBallCharacters = () => {
     }
   };
 
-  return { characters: memoizedCharacters, page, setPage, totalPages, error, isLoaded, isFirstLoad, handleImageLoad, limit, setLimit };
+  return { 
+    characters: memoizedCharacters, 
+    page, 
+    setPage, 
+    totalPages, 
+    error, 
+    isLoaded, 
+    isFirstLoad, 
+    handleImageLoad, 
+    limit, 
+    setLimit };
 };

@@ -6,7 +6,7 @@ import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
 
 interface OriginPlanetProps {
-  character: Character;
+  character?: Character;
 }
 
 export const OriginPlanet: React.FC<OriginPlanetProps> = ({ character }) => {
