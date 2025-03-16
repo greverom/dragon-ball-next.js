@@ -12,6 +12,9 @@
 
   --button-bg: 23, 23, 23;
   --button-text: 255, 255, 255;
+
+  --skeleton-base: 230, 230, 230; 
+  --skeleton-highlight: 255, 255, 255; 
 }
 
 [data-theme="dark"] {
@@ -26,6 +29,9 @@
 
   --button-bg: 237, 237, 237;
   --button-text: 23, 23, 23;
+
+  --skeleton-base: 80, 80, 80; 
+  --skeleton-highlight: 120, 120, 120;
 }
 
 body {
