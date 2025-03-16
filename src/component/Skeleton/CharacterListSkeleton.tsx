@@ -19,7 +19,7 @@ const CharacterListSkeleton: React.FC<Props> = ({ limit = 4 }) => {
           {/* Imagen */}
           <Skeleton 
             width={240} 
-            height={240} 
+            height={220} 
             className="rounded-lg" 
             baseColor={`rgb(var(--skeleton-base))`} 
             highlightColor={`rgb(var(--skeleton-highlight))`} 

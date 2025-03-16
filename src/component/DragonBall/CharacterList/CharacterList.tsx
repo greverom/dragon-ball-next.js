@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallCharacters";
 import Pagination from "../Pagination/Pagination";
 import CharacterListSkeleton from "@/component/Skeleton/CharacterListSkeleton";
+import PaginationSkeleton from "@/component/Skeleton/PaginationSkeleton";
 
 const CharacterList = () => {
   const { characters, page, setPage, totalPages, isLoading, limit, setLimit } = useDragonBallCharacters();
@@ -12,7 +13,10 @@ const CharacterList = () => {
     <div className="flex flex-col items-center">
 
       {isLoading ? (
-        <CharacterListSkeleton limit={limit} />
+         <>
+         <CharacterListSkeleton limit={limit} />
+         <PaginationSkeleton /> 
+       </>
       ) : (
         <>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-7 mb-6">
@@ -31,7 +35,7 @@ const CharacterList = () => {
             ))}
           </div>
 
-          {!isLoading && <Pagination page={page} setPage={setPage} totalPages={totalPages} limit={limit} setLimit={setLimit} />}
+         <Pagination page={page} setPage={setPage} totalPages={totalPages} limit={limit} setLimit={setLimit} />
         </>
       )}
     </div>
