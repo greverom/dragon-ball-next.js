@@ -3,6 +3,9 @@
 import React  from "react";
 import dynamic from "next/dynamic";
 import { useCharacterDetail } from "@/hooks/useDragonBall/useDragonBallDetail";
+import CharacterInfoSkeleton from "@/component/Skeleton/DetailPage/CharacterInfoSkeleton";
+import OriginPlanetSkeleton from "@/component/Skeleton/DetailPage/OriginPlanet";
+import CharacterTransformationsSkeleton from "@/component/Skeleton/DetailPage/CharacterTransformationskeleton";
 
 
 const CharacterInfo = dynamic(() => import("@/component/DragonBall/Character/CharacterInfo"));
@@ -10,7 +13,7 @@ const CharacterTransformations = dynamic(() => import("@/component/DragonBall/Ch
 const OriginPlanet = dynamic(() => import("@/component/DragonBall/Character/OriginPlanet"));
 
 const CharacterDetailPage = () => {
-  const { character, error } = useCharacterDetail();
+  const { character, error, loading } = useCharacterDetail();
 
   if (error || !character) {
     return <p className="text-center text-red-500">{error}</p>;
@@ -19,11 +22,11 @@ const CharacterDetailPage = () => {
   return (
     <div className="min-h-screen flex flex-col items-center p-7 bg-background text-foreground transition-colors">
       
-        <CharacterInfo character={character} />
+      {loading ? <CharacterInfoSkeleton /> : <CharacterInfo character={character} />}
 
-        <OriginPlanet character={character} />
+      {loading ? <OriginPlanetSkeleton /> : <OriginPlanet character={character} />}
 
-        <CharacterTransformations character={character} />
+      {loading ? <CharacterTransformationsSkeleton /> : <CharacterTransformations character={character} />}
       
     </div>
   );

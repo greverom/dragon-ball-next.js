@@ -4,12 +4,18 @@ import React from "react";
 import Image from "next/image";
 import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
+import CharacterTransformationsSkeleton from "@/component/Skeleton/DetailPage/CharacterTransformationskeleton";
 
 interface CharacterTransformationsProps {
   character?: Character;
+  isLoading?: boolean;
 }
 
-export const CharacterTransformations: React.FC<CharacterTransformationsProps> = ({ character }) => {
+export const CharacterTransformations: React.FC<CharacterTransformationsProps> = ({ character, isLoading }) => {
+  if (isLoading) {
+    return <CharacterTransformationsSkeleton />;
+  }
+  
   if (!character?.transformations || character.transformations.length === 0) {
     return <p className="text-center mt-6">No tiene transformaciones.</p>;
   }

@@ -4,13 +4,14 @@ import React from "react";
 import Image from "next/image";
 import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
+import OriginPlanetSkeleton from "@/component/Skeleton/DetailPage/OriginPlanet";
 
 interface OriginPlanetProps {
   character?: Character;
 }
 
 export const OriginPlanet: React.FC<OriginPlanetProps> = ({ character }) => {
-  if (!character?.originPlanet) return null;
+  if (!character?.originPlanet) return <OriginPlanetSkeleton />;
 
   return (
     <div className="max-w-5xl mt-8 text-center bg-card text-card-foreground p-5">

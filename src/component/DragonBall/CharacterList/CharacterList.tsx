@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallCharacters";
 import Pagination from "../Pagination/Pagination";
-import CharacterListSkeleton from "@/component/Skeleton/CharacterListSkeleton";
-import PaginationSkeleton from "@/component/Skeleton/PaginationSkeleton";
+import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
+import PaginationSkeleton from "@/component/Skeleton/DragonBallPage/PaginationSkeleton";
 
 const CharacterList = () => {
   const { characters, page, setPage, totalPages, isLoading, limit, setLimit } = useDragonBallCharacters();

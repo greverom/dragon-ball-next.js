@@ -2,8 +2,8 @@
 
 import dynamic from "next/dynamic";
 import React, { Suspense, useState, useEffect } from "react";
-import CharacterListSkeleton from "@/component/Skeleton/CharacterListSkeleton"; 
-import DragonBallTitleSkeleton from "@/component/Skeleton/DragonballTitleSkeleton";
+import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton"; 
+import DragonBallTitleSkeleton from "@/component/Skeleton/DragonBallPage/DragonballTitleSkeleton";
  
 
 const CharacterList = dynamic(() => import("@/component/DragonBall/CharacterList/CharacterList"));
