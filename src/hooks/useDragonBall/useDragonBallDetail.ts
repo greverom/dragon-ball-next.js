@@ -17,6 +17,7 @@ export const useCharacterDetail = () => {
     if (!id) return;
 
     const getCharacter = async () => {
+      setLoading(true);
       try {
         const data = await fetchDragonBallCharacterById(Number(id));
         if (data) {
