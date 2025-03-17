@@ -6,22 +6,21 @@ import "react-loading-skeleton/dist/skeleton.css";
 
 const CharacterInfoSkeleton = () => {
   return (
-    <div className="max-w-6xl w-full bg-card text-card-foreground mt-5 p-5 h-[350px] flex items-center">
-      <div className="flex flex-col md:flex-row md:items-center w-full">
+    <div className="max-w-6xl w-full bg-card text-card-foreground h-[320px] flex items-center mt-16 md:mt-0">
+      <div className="flex flex-col  md:flex-row md:items-center w-full">
         
         {/* Imagen del personaje */}
         <div className="flex justify-center md:justify-start">
           <Skeleton 
-            circle 
-            width={160} 
-            height={160} 
+            width={180} 
+            height={230} 
             baseColor={`rgb(var(--skeleton-base))`} 
             highlightColor={`rgb(var(--skeleton-highlight))`}
           />
         </div>
 
         {/* Detalles del personaje */}
-        <div className="flex-1 px-0 md:px-7 text-justify md:text-left space-y-2">
+        <div className="flex-1 px-3 md:px-7 text-justify md:text-left space-y-2">
           <Skeleton 
             height={30} 
             width="20%" 
