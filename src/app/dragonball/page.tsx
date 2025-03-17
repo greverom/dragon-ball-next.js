@@ -5,7 +5,7 @@ import DragonBallTitle from "@/component/DragonBall/DragonBallTitle/DragonBallTi
 import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
 import DragonBallTitleSkeleton from "@/component/Skeleton/DragonBallPage/DragonballTitleSkeleton";
 import { useLoading } from "@/hooks/loading/useloading";
-import Pagination from "@/component/DragonBall/Pagination/Pagination";
+import Pagination from "@/component/ui/Pagination/Pagination";
 import PaginationSkeleton from "@/component/Skeleton/DragonBallPage/PaginationSkeleton";
 
 const DragonBallPage = () => {
@@ -19,7 +19,7 @@ const DragonBallPage = () => {
       </header>
 
       <main className="max-w-5xl mx-auto py-10">
-        <Suspense fallback={<CharacterListSkeleton limit={4} />}>
+        <Suspense fallback={<CharacterListSkeleton />}>
           <CharacterList />
         </Suspense>
         {isLoading ? <PaginationSkeleton /> : <Pagination />}

@@ -7,7 +7,7 @@ interface Props {
   params: { id: string };
 }
 
-export const useCharacterDetail = () => {
+export const useCharacterById = () => {
   const { id } = useParams() as Props["params"]; 
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
@@ -29,7 +29,7 @@ export const useCharacterDetail = () => {
         console.log(error);
         setError("Error al obtener el personaje.");
       } finally {
-        setTimeout(() => setLoading(false), 500);  
+        setTimeout(() => setLoading(false), 300);  
       }
     };
 

@@ -3,8 +3,6 @@
 import { usePagination } from "@/context/Paginationcontxt";
 
 const Pagination = () => {
-  console.log("Renderizando Pagination"); 
-
   const { page, setPage, totalPages, limit, setLimit } = usePagination();
 
   const handleLimitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {

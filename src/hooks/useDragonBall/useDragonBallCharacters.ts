@@ -5,6 +5,7 @@ import { getDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character } from "@/interface/interface";
 import { usePagination } from "@/context/Paginationcontxt";
 
+
 export const useDragonBallCharacters = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [error, setError] = useState<string | null>(null);

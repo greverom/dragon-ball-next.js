@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu"; 
-import ThemeSwitch from "../ThemeSwitch";
+import ThemeSwitch from "../ui/ThemeSwitch";
 import SearchNavbar from "./SearchNavbar";
 
 

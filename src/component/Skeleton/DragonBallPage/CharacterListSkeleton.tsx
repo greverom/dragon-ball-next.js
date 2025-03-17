@@ -1,14 +1,13 @@
 "use client";
 
+import { usePagination } from "@/context/Paginationcontxt";
 import React from "react";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
-interface Props {
-  limit?: number; 
-}
-
-const CharacterListSkeleton: React.FC<Props> = ({ limit = 4 }) => {
+const CharacterListSkeleton: React.FC = () => {
+  const { limit } = usePagination();
+  
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-7 mb-6">
       {Array.from({ length: limit }).map((_, index) => (

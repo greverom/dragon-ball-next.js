@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import   Link from "next/link";
 import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallCharacters";
-import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
+import   CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
 
 const CharacterList = () => {
   const { characters, isLoading } = useDragonBallCharacters();
