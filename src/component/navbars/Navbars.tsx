@@ -7,12 +7,10 @@ import { Menu, X } from "lucide-react";
 import MobileMenu from "./MobileMenu"; 
 import ThemeSwitch from "../ThemeSwitch";
 import SearchNavbar from "./SearchNavbar";
-import { useDragonBallCharacters } from "@/hooks/useDragonBall/useDragonBallCharacters";
 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const { characters } = useDragonBallCharacters();
   const pathname = usePathname();
 
   const toggleMenu = () => {
@@ -20,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-blue-600 p-5 shadow-lg">
+    <nav className="bg-gradient-to-r from-orange-500 to-gray-700 p-5 shadow-lg">
       <div className="max-w-8xl mx-auto flex justify-between items-center">
         
         <h1 className="text-white text-2xl font-bold">Mi App</h1>
@@ -28,34 +26,30 @@ const Navbar = () => {
         <div className="flex items-center space-x-6 ml-auto">
           <ul className="hidden md:flex space-x-4">
             <li>
-              <Link
+            <Link
                 href="/"
-                className={`text-white px-3 py-2 rounded-lg 
-                ${pathname === "/" ? "bg-blue-800" : "hover:bg-blue-700"}`}
+                className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
+                hover:bg-opacity-60 ${
+                  pathname === "/" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
+                }`}
               >
                 Inicio
               </Link>
             </li>
             <li>
-              <Link
+            <Link
                 href="/dragonball"
-                className={`text-white px-3 py-2 rounded-lg 
-                ${pathname === "/dragonball" ? "bg-blue-800" : "hover:bg-blue-700"}`}
+                className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
+                hover:bg-opacity-60 ${
+                  pathname === "/dragonball" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
+                }`}
               >
                 Dragon Ball
               </Link>
             </li>
-            <li>
-              <Link
-                href="/generator"
-                className={`text-white px-3 py-2 rounded-lg 
-                ${pathname === "/generator" ? "bg-blue-800" : "hover:bg-blue-700"}`}
-              >
-                Generar Password
-              </Link>
-            </li>
+
           </ul>
-          <SearchNavbar characters={characters}/> 
+          <SearchNavbar/> 
 
           <ThemeSwitch />
 

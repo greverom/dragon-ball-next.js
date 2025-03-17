@@ -8,7 +8,7 @@ interface MobileMenuProps {
   toggleMenu: () => void;
 }
 
-const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
+const MobileMenu = ({ isOpen }: MobileMenuProps) => {
   const pathname = usePathname();
 
   if (!isOpen) return null; 
@@ -17,34 +17,27 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
     <ul className="md:hidden mt-2 p-4 space-y-2 text-left">
        <li>
         <Link
-          href="/"
-          className={`block text-white px-3 py-2 rounded-lg
-          ${pathname === "/" ? "font-bold" : "hover:bg-blue-600"}`}
-          onClick={toggleMenu}
-        >
-          Home
+            href="/"
+            className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
+            hover:bg-opacity-60 ${
+              pathname === "/" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
+            }`}
+          >
+            Inicio
         </Link>
       </li>
       <li>
         <Link
           href="/dragonball"
-          className={`block text-white px-3 py-2 rounded-lg 
-          ${pathname === "/dragonball" ? "font-bold" : "hover:bg-blue-600"}`}
-          onClick={toggleMenu} 
+          className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
+          hover:bg-opacity-60 ${
+            pathname === "/dragonball" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
+          }`}
         >
           Dragon Ball
         </Link>
       </li>
-      <li>
-        <Link
-          href="/generator"
-          className={`block text-white px-3 py-2 rounded-lg
-          ${pathname === "/generator" ? "font-bold" : "hover:bg-blue-600"}`}
-          onClick={toggleMenu}
-        >
-          Generar Password
-        </Link>
-      </li>
+      
     </ul>
   );
 };

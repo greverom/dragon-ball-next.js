@@ -20,7 +20,7 @@ const CharacterDetailPage = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-7 bg-background text-foreground transition-colors">
+    <div className="min-h-screen flex flex-col items-center p-5 bg-background text-foreground transition-colors">
       
       {loading ? <CharacterInfoSkeleton /> : <CharacterInfo character={character} />}
 

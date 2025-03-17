@@ -1,27 +1,19 @@
-"use client";
-
-import dynamic from "next/dynamic";
-import React, { Suspense, useState, useEffect } from "react";
-import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton"; 
+"use client"
+import React, { Suspense } from "react";
+import CharacterList from "@/component/DragonBall/CharacterList/CharacterList";
+import DragonBallTitle from "@/component/DragonBall/DragonBallTitle/DragonBallTitle";
+import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
 import DragonBallTitleSkeleton from "@/component/Skeleton/DragonBallPage/DragonballTitleSkeleton";
- 
-
-const CharacterList = dynamic(() => import("@/component/DragonBall/CharacterList/CharacterList"));
-const DragonBallTitle = dynamic(() => import("@/component/DragonBall/DragonBallTitle/DragonBallTitle"));
+import { useLoading } from "@/hooks/loading/useloading";
 
 const DragonBallPage = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000); 
-    return () => clearTimeout(timer);
-  }, []);
-
+  const { isLoading } = useLoading(300);
   return (
     <div className="bg-background text-foreground min-h-screen flex flex-col items-center p-10 transition-colors">
-      
       <header>
+        <Suspense fallback={<DragonBallTitleSkeleton />}>
         {isLoading ? <DragonBallTitleSkeleton /> : <DragonBallTitle text="Dragon Ball Character" />}
+        </Suspense>
       </header>
 
       <main className="max-w-5xl mx-auto py-10">
@@ -29,7 +21,6 @@ const DragonBallPage = () => {
           <CharacterList />
         </Suspense>
       </main>
-      
     </div>
   );
 };
