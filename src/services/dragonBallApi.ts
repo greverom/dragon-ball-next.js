@@ -7,7 +7,7 @@ if (!API_URL) {
   throw new Error("NEXT_PUBLIC_API_URL no está definida en .env.local");
 }
 
-export const getDragonBallCharacters = async (page: number = 1, limit: number = 10) => {
+export const getDragonBallCharacters = async (page: number = 1, limit: number = 58) => {
   try {
     const response = await fetch(`${API_URL}?page=${page}&limit=${limit}`, { cache: "no-store" });
     if (!response.ok) {

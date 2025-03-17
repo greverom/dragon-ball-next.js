@@ -15,8 +15,17 @@ const PaginationContext = createContext<PaginationContextProps | undefined>(unde
 
 export const PaginationProvider = ({ children }: { children: React.ReactNode }) => {
   const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
+  const [limit, setLimitState] = useState(4);
   const [totalPages, setTotalPages] = useState(1);
+
+  const setLimit = (newLimit: number) => {
+    if (newLimit === 0) {
+      setPage(1);
+      setTimeout(() => setLimitState(newLimit), 0); 
+    } else {
+      setLimitState(newLimit);
+    }
+  };
 
   return (
     <PaginationContext.Provider value={{ page, setPage, limit, setLimit, totalPages, setTotalPages }}>

@@ -9,6 +9,12 @@ interface PaginationProps {
 }
 
 const Pagination = ({ page, setPage, totalPages, limit, setLimit }: PaginationProps) => {
+  const handleLimitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const newLimit = e.target.value === "all" ? 0 : Number(e.target.value);
+    setPage(1);
+    setLimit(newLimit); 
+  };
+
   return (
     <div className="flex flex-col items-center space-y-3 mt-5">
       
@@ -17,7 +23,7 @@ const Pagination = ({ page, setPage, totalPages, limit, setLimit }: PaginationPr
         <select 
           id="limit" 
           value={limit === 0 ? "all" : limit} 
-          onChange={(e) => setLimit(e.target.value === "all" ? 0 : Number(e.target.value))} 
+          onChange={handleLimitChange}
           className="border border-gray-400 px-2 py-1 rounded-lg transition-colors
              bg-[rgb(var(--button-bg))] text-[rgb(var(--button-text))] 
              hover:brightness-90"

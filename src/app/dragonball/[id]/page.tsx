@@ -8,9 +8,9 @@ import OriginPlanetSkeleton from "@/component/Skeleton/DetailPage/OriginPlanet";
 import CharacterTransformationsSkeleton from "@/component/Skeleton/DetailPage/CharacterTransformationskeleton";
 
 
-const CharacterInfo = dynamic(() => import("@/component/DragonBall/Character/CharacterInfo"));
-const CharacterTransformations = dynamic(() => import("@/component/DragonBall/Character/CharacterTransformations"));
-const OriginPlanet = dynamic(() => import("@/component/DragonBall/Character/OriginPlanet"));
+const CharacterInfo = dynamic(() => import("@/component/DragonBall/CharacterDetail/CharacterInfo"));
+const CharacterTransformations = dynamic(() => import("@/component/DragonBall/CharacterDetail/CharacterTransformations"));
+const OriginPlanet = dynamic(() => import("@/component/DragonBall/CharacterDetail/OriginPlanet"));
 
 const CharacterDetailPage = () => {
   const { character, error, loading } = useCharacterDetail();
