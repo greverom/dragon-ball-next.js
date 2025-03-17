@@ -1,18 +1,16 @@
 "use client";
 
-interface PaginationProps {
-  page: number;
-  setPage: (page: number) => void;
-  totalPages: number;
-  limit: number;
-  setLimit: (limit: number) => void;
-}
+import { usePagination } from "@/context/Paginationcontxt";
 
-const Pagination = ({ page, setPage, totalPages, limit, setLimit }: PaginationProps) => {
+const Pagination = () => {
+  console.log("Renderizando Pagination"); 
+
+  const { page, setPage, totalPages, limit, setLimit } = usePagination();
+
   const handleLimitChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const newLimit = e.target.value === "all" ? 0 : Number(e.target.value);
     setPage(1);
-    setLimit(newLimit); 
+    setLimit(newLimit);
   };
 
   return (

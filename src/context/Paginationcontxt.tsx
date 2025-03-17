@@ -1,6 +1,6 @@
 "use client";
 
-import React, { createContext, useContext, useState } from "react";
+import React, { createContext, useCallback, useContext, useState } from "react";
 
 interface PaginationContextProps {
   page: number;
@@ -14,9 +14,13 @@ interface PaginationContextProps {
 const PaginationContext = createContext<PaginationContextProps | undefined>(undefined);
 
 export const PaginationProvider = ({ children }: { children: React.ReactNode }) => {
-  const [page, setPage] = useState(1);
+  const [page, setPageState] = useState(1);
   const [limit, setLimitState] = useState(4);
   const [totalPages, setTotalPages] = useState(1);
+
+  const setPage = useCallback((newPage: number) => {
+    setPageState((prev) => (prev !== newPage ? newPage : prev));
+  }, []);
 
   const setLimit = (newLimit: number) => {
     if (newLimit === 0) {

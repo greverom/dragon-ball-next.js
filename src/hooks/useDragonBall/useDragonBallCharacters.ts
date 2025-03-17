@@ -1,21 +1,18 @@
 "use client";
 
-import { useState, useEffect, useMemo, useRef } from "react";
+import { useEffect, useState, useMemo, useRef } from "react";
 import { getDragonBallCharacters } from "@/services/dragonBallApi";
 import { Character } from "@/interface/interface";
+import { usePagination } from "@/context/Paginationcontxt";
 
 export const useDragonBallCharacters = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
-  const [page, setPage] = useState(1);
-  const [limit, setLimit] = useState(4);
-  const [totalPages, setTotalPages] = useState(1);
   const [error, setError] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const  abortControllerRef = useRef<AbortController | null>(null);
-
+  const abortControllerRef = useRef<AbortController | null>(null);
+  const { page, limit, setTotalPages } = usePagination();
 
   useEffect(() => {
-
     if (abortControllerRef.current) {
       abortControllerRef.current.abort();
     }
@@ -30,8 +27,7 @@ export const useDragonBallCharacters = () => {
         if (!controller.signal.aborted) {
           if (data?.items && data?.meta) {
             setCharacters(data.items);
-
-            setTotalPages((prev) => (prev !== data.meta.totalPages ? data.meta.totalPages : prev));
+            setTotalPages(data.meta.totalPages);
           } else {
             setError("No se encontraron personajes");
           }
@@ -52,18 +48,13 @@ export const useDragonBallCharacters = () => {
     return () => {
       controller.abort();
     };
-  }, [page, limit]);
+  }, [page, limit, setTotalPages]); 
 
   const memoizedCharacters = useMemo(() => characters, [characters]);
 
   return {
     characters: memoizedCharacters,
-    page,
-    setPage,
-    totalPages,
     error,
     isLoading,
-    limit,
-    setLimit,
   };
 };
