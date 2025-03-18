@@ -29,7 +29,7 @@ export const OriginPlanet: React.FC<OriginPlanetProps> = ({ character }) => {
           unoptimized
         />
 
-        <div className="md:ml-8 text-left">
+        <div className="md:ml-8 text-justify md:text-left">
           <h3 className="text-xl font-semibold">{character.originPlanet.name}</h3>
           <p className="text-md">{character.originPlanet.description}</p>
         </div>
