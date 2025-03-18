@@ -1,11 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import   Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
- 
-import   ThemeSwitch from "../ui/ThemeSwitch";
+import {
+  NavbarContainer,
+  NavbarContent,
+  NavLinks,
+  NavLink,
+  ButtonContainer,
+  MobileButton,
+  Spacer,
+} from "../../Styles/navbar.styled";
+
+import ThemeSwitch from "../ui/ThemeSwitch";
 import SearchNavbar from "./SearchNavbar";
 import MobileMenu from "./MobileMenu";
 
@@ -15,52 +23,42 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
   };
 
   return (
-    <nav className="bg-gradient-to-r from-orange-500 to-gray-700 p-5 shadow-lg">
-      <div className="max-w-8xl mx-auto flex justify-between items-center">
-        
-        <h1 className="text-white text-2xl font-bold">Mi App</h1>
+    <>
+      <NavbarContainer>
+        <NavbarContent>
 
-        <div className="flex items-center space-x-6 ml-auto">
-          <ul className="hidden md:flex space-x-4">
+          <NavLinks>
             <li>
-            <Link
-                href="/"
-                className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
-                hover:bg-opacity-60 ${
-                  pathname === "/" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
-                }`}
-              >
+              <NavLink href="/" className={pathname === "/" ? "active" : ""}>
                 Inicio
-              </Link>
+              </NavLink>
             </li>
             <li>
-            <Link
-                href="/dragonball"
-                className={`text-white px-3 py-2 rounded-lg transition-all duration-300 relative 
-                hover:bg-opacity-60 ${
-                  pathname === "/dragonball" ? "after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-white" : ""
-                }`}
-              >
+              <NavLink href="/dragonball" className={pathname === "/dragonball" ? "active" : ""}>
                 Dragon Ball
-              </Link>
+              </NavLink>
             </li>
+          </NavLinks>
 
-          </ul>
-          <SearchNavbar/> 
+          <ButtonContainer>
+            <SearchNavbar />
+            <ThemeSwitch />
 
-          <ThemeSwitch />
+            <MobileButton onClick={toggleMenu}>
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </MobileButton>
+          </ButtonContainer>
+        </NavbarContent>
+      </NavbarContainer>
 
-          <button onClick={toggleMenu} className="md:hidden text-white">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
-          </button>
-        </div>
-      </div>
+      <Spacer /> 
 
       <MobileMenu isOpen={isOpen} toggleMenu={toggleMenu} />
-    </nav>
+    </>
   );
 };
 
