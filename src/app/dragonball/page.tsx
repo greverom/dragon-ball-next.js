@@ -6,7 +6,7 @@ import CharacterListSkeleton from "@/components/Skeleton/DragonBallPage/Characte
 import DragonBallTitleSkeleton from "@/components/Skeleton/DragonBallPage/DragonballTitleSkeleton";
 import { useLoading } from "@/hooks/loading/useloading";
 import Pagination from "@/components/ui/Pagination/Pagination";
-import PaginationSkeleton from "@/components/Skeleton/DragonBallPage/PaginationSkeleton";
+
 
 const DragonBallPage = () => {
   const { isLoading } = useLoading(300);
@@ -22,7 +22,7 @@ const DragonBallPage = () => {
         <Suspense fallback={<CharacterListSkeleton />}>
           <CharacterList />
         </Suspense>
-        {isLoading ? <PaginationSkeleton /> : <Pagination />}
+        <Pagination />
       </main>
     </div>
   );

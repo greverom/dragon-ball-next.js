@@ -13,8 +13,8 @@
   --button-bg: 23, 23, 23;
   --button-text: 255, 255, 255;
 
-  --skeleton-base: 230, 230, 230; 
-  --skeleton-highlight: 255, 255, 255; 
+  --skeleton-base: 200, 200, 200;  
+  --skeleton-highlight: 240, 240, 240;
 }
 
 [data-theme="dark"] {

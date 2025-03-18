@@ -17,7 +17,7 @@ const CharacterListSkeleton: React.FC = () => {
         >
           {/* Imagen */}
           <Skeleton 
-            width={240} 
+            width={200} 
             height={225} 
             className="rounded-lg" 
             baseColor={`rgb(var(--skeleton-base))`} 

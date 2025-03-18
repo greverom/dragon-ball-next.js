@@ -8,7 +8,7 @@ const DragonBallTitleSkeleton = () => {
   return (
     <div className="text-center">
       <Skeleton 
-        width={600} 
+        width={300} 
         height={64} 
         baseColor={`rgb(var(--skeleton-base))`} 
         highlightColor={`rgb(var(--skeleton-highlight))`}
