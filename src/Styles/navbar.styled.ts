@@ -95,19 +95,39 @@ export const Spacer = styled.div`
 `;
 
 export const MobileMenuContainer = styled.ul`
-  position: absolute;
-  top: 9%; 
-  width: 100%; 
-  background: linear-gradient(to right, #ff6a00, #4a5568);
-  padding: 1rem;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); 
+  padding: 2rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 50;
+  z-index: 100; 
   text-align: left;
   animation: ${slideDown} 0.3s ease-in-out;
-  max-height: 60vh; 
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; 
 
   li {
-    padding: 0.8rem 0;
+    padding: 1rem 0;
+  }
+`;
+
+export const CloseButton = styled.button`
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+
+  &:hover {
+    opacity: 0.7;
   }
 `;

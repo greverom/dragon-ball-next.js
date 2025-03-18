@@ -1,8 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import { MobileMenuContainer, NavLink } from "../../Styles/navbar.styled"; 
+import { MobileMenuContainer, NavLink, CloseButton } from "../../Styles/navbar.styled"; 
 import { useEffect } from "react";
+import { X } from "lucide-react"; 
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -20,6 +21,11 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
 
   return (
     <MobileMenuContainer>
+
+      <CloseButton onClick={toggleMenu}>
+        <X size={28} />
+      </CloseButton>
+
       <li>
         <NavLink href="/" className={pathname === "/" ? "active" : ""} onClick={toggleMenu}>
           Inicio
@@ -33,6 +39,5 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
     </MobileMenuContainer>
   );
 };
-
 
 export default MobileMenu;
