@@ -1,12 +1,12 @@
 "use client"
 import React, { Suspense } from "react";
-import CharacterList from "@/component/DragonBall/CharacterList/CharacterList";
-import DragonBallTitle from "@/component/DragonBall/DragonBallTitle/DragonBallTitle";
-import CharacterListSkeleton from "@/component/Skeleton/DragonBallPage/CharacterListSkeleton";
-import DragonBallTitleSkeleton from "@/component/Skeleton/DragonBallPage/DragonballTitleSkeleton";
+import CharacterList from "@/components/DragonBall/CharacterList/CharacterList";
+import DragonBallTitle from "@/components/DragonBall/DragonBallTitle/DragonBallTitle";
+import CharacterListSkeleton from "@/components/Skeleton/DragonBallPage/CharacterListSkeleton";
+import DragonBallTitleSkeleton from "@/components/Skeleton/DragonBallPage/DragonballTitleSkeleton";
 import { useLoading } from "@/hooks/loading/useloading";
-import Pagination from "@/component/ui/Pagination/Pagination";
-import PaginationSkeleton from "@/component/Skeleton/DragonBallPage/PaginationSkeleton";
+import Pagination from "@/components/ui/Pagination/Pagination";
+import PaginationSkeleton from "@/components/Skeleton/DragonBallPage/PaginationSkeleton";
 
 const DragonBallPage = () => {
   const { isLoading } = useLoading(300);

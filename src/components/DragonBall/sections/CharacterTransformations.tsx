@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
-import CharacterTransformationsSkeleton from "@/component/Skeleton/DetailPage/CharacterTransformationskeleton";
+import CharacterTransformationsSkeleton from "@/components/Skeleton/DetailPage/CharacterTransformationskeleton";
 
 interface CharacterTransformationsProps {
   character?: Character;

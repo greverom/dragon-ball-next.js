@@ -2,7 +2,7 @@
 
 import React from "react";
 import { useCharacterById } from "@/hooks/useDragonBall/useDragonBallCharacterById";
-import CharacterDetail from "@/component/DragonBall/CharacterDetail";
+import CharacterDetail from "@/components/DragonBall/CharacterDetail";
 
 const CharacterDetailPage = () => {
   const { character, error, loading } = useCharacterById();

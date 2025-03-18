@@ -3,13 +3,13 @@
 import React from "react";
 import dynamic from "next/dynamic";
 import { Character } from "@/interface/interface";
-import CharacterInfoSkeleton from "@/component/Skeleton/DetailPage/CharacterInfoSkeleton";
-import OriginPlanetSkeleton from "@/component/Skeleton/DetailPage/OriginPlanet";
-import CharacterTransformationsSkeleton from "@/component/Skeleton/DetailPage/CharacterTransformationskeleton";
+import CharacterInfoSkeleton from "@/components/Skeleton/DetailPage/CharacterInfoSkeleton";
+import OriginPlanetSkeleton from "@/components/Skeleton/DetailPage/OriginPlanet";
+import CharacterTransformationsSkeleton from "@/components/Skeleton/DetailPage/CharacterTransformationskeleton";
 
-const CharacterInfo = dynamic(() => import("@/component/DragonBall/sections/CharacterInfo"));
-const CharacterTransformations = dynamic(() => import("@/component/DragonBall/sections/CharacterTransformations"));
-const OriginPlanet = dynamic(() => import("@/component/DragonBall/sections/OriginPlanet"));
+const CharacterInfo = dynamic(() => import("@/components/DragonBall/sections/CharacterInfo"));
+const CharacterTransformations = dynamic(() => import("@/components/DragonBall/sections/CharacterTransformations"));
+const OriginPlanet = dynamic(() => import("@/components/DragonBall/sections/OriginPlanet"));
 
 interface CharacterDetailProps {
   character: Character;

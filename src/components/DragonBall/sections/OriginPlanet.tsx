@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Character } from "@/interface/interface";
 import imageLoader from "@/utils/imageLoader";
-import OriginPlanetSkeleton from "@/component/Skeleton/DetailPage/OriginPlanet";
+import OriginPlanetSkeleton from "@/components/Skeleton/DetailPage/OriginPlanet";
 
 interface OriginPlanetProps {
   character?: Character;
