@@ -1,15 +1,15 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import   Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import MobileMenu from "./MobileMenu"; 
-import ThemeSwitch from "../ui/ThemeSwitch";
-import SearchNavbar from "./SearchNavbar";
+import   MobileMenu from "./MobileMenu"; 
+import   ThemeSwitch from "../ui/ThemeSwitch";
+import   SearchNavbar from "./SearchNavbar";
 
 
-const Navbar = () => {
+const Navbars = () => {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
@@ -64,4 +64,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbars;
