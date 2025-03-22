@@ -20,13 +20,11 @@ export const NavbarContainer = styled.nav`
   width: 100%;
   background: linear-gradient(to right, #ff6a00, #4a5568);
   padding: 1rem;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 50;
 `;
 
 export const NavbarContent = styled.div`
-  width: 100%;
-  max-width: 1200px;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -34,6 +32,7 @@ export const NavbarContent = styled.div`
   padding: 0 1rem;
 
   @media (max-width: 768px) {
+  width: 100%;
     padding: 0 0.5rem;
   }
 `;
@@ -118,7 +117,7 @@ export const MobileMenuContainer = styled.ul`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 2rem;
+  top: 1.5rem;
   right: 2rem;
   background: none;
   border: none;
@@ -128,6 +127,6 @@ export const CloseButton = styled.button`
   transition: opacity 0.3s ease-in-out;
 
   &:hover {
-    opacity: 0.7;
+    opacity: 0.4;
   }
 `;

@@ -17,14 +17,14 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
       <div className="flex flex-col md:flex-row md:items-center">
         <div className="flex justify-center md:justify-start">
         <Image
-  loader={imageLoader}
-  src={character.image}
-  alt={character.name}
-  width={180}  
-  height={180} 
-    className="w-40 h-75 md:w-48 md:h-80 object-contain rounded-lg"
-  priority
-/>
+          loader={imageLoader}
+          src={character.image}
+          alt={character.name}
+          width={180}  
+          height={180} 
+          className="w-40 h-75 md:w-48 md:h-80 object-contain rounded-lg"
+          priority
+        />
         </div>
 
         <div className="flex-1 px-0 md:px-7 text-justify md:text-left">
