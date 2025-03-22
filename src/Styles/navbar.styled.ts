@@ -99,7 +99,7 @@ export const MobileMenuContainer = styled.ul`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.8); 
+  background: rgba(0, 0, 0, 0.6); 
   padding: 2rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 100; 
@@ -117,14 +117,14 @@ export const MobileMenuContainer = styled.ul`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 1.5rem;
-  right: 2rem;
+  top: 1.4rem;
+  right: 1.6rem;
   background: none;
   border: none;
   color: white;
   font-size: 24px;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease;
 
   &:hover {
     opacity: 0.4;

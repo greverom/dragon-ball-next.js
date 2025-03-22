@@ -51,3 +51,11 @@ body {
 [data-theme="dark"] .image-blur {
   filter: drop-shadow(0px 0px 15px rgba(255, 255, 255, 0.3)); 
 }
+
+.fade-mask {
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: cover;
+}

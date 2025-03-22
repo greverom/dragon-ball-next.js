@@ -13,7 +13,7 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
   if (!character) return null;  
 
   return (
-    <div className="max-w-6xl w-full bg-card text-card-foreground p-6 mt-6">
+    <div className="max-w-6xl w-full bg-card text-card-foreground">
       <div className="flex flex-col md:flex-row md:items-center">
         <div className="flex justify-center md:justify-start">
         <Image
