@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
 export const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 900;
   text-transform: uppercase;
   text-align: center;
-  background: linear-gradient(3deg, #ff8000, #ffcc00); 
+   background: linear-gradient(3deg, #ff8000, #ffcc00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   position: relative;
@@ -24,6 +24,6 @@ export const Title = styled.h1`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.5rem; 
+    font-size: 1.2rem; 
   }
 `;

@@ -8,12 +8,12 @@ const BackgroundImage = () => {
     <div className="fixed top-0 left-0 w-full h-full -z-10">
 
       <Image
-        src="/images/dragon-ballfondo.jpeg"
+        src="/images/dragonballbackgroun4.jpg"
         alt="Fondo Dragon Ball Desktop"
         fill
         priority
         quality={75}
-        className="hidden sm:block object-cover brightness-[0.7] opacity-80 fade-mask mt-18"
+        className="hidden sm:block object-cover brightness-[0.7] opacity-80 fade-mask"
       />
 
       <Image
@@ -22,7 +22,7 @@ const BackgroundImage = () => {
         fill
         priority
         quality={75}
-        className="block sm:hidden object-cover brightness-[0.7] opacity-80 fade-mask mt-18"
+        className="block sm:hidden object-cover brightness-[0.7] opacity-80 fade-mask"
       />
     </div>
   );

@@ -1,4 +1,3 @@
-// src/components/ui/MobileBackground.tsx
 "use client";
 
 import Image from "next/image";
