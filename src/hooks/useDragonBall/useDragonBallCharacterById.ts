@@ -12,6 +12,7 @@ export const useCharacterById = () => {
   const [character, setCharacter] = useState<Character | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -22,12 +23,12 @@ export const useCharacterById = () => {
         const data = await fetchDragonBallCharacterById(Number(id));
         if (data) {
           setCharacter(data);
+          setNotFound(false);
         } else {
-          setError("Personaje no encontrado.");
+          setNotFound(true);
         }
       } catch (error) {
-        console.log(error);
-        setError("Error al obtener el personaje.");
+        setError(`Error al obtener el personaje.${error}`);
       } finally {
         setTimeout(() => setLoading(false), 300);  
       }
@@ -36,5 +37,5 @@ export const useCharacterById = () => {
     getCharacter();
   }, [id]);
 
-  return { character, loading, error };
+  return { character, loading, error, notFound };
 };

@@ -16,13 +16,14 @@ const CharacterListSkeleton: React.FC = () => {
           className="bg-card text-card-foreground p-4 flex flex-col items-center cursor-pointer rounded-lg"
         >
           {/* Imagen */}
-          <Skeleton 
-            width={200} 
-            height={225} 
-            className="rounded-lg" 
-            baseColor={`rgb(var(--skeleton-base))`} 
-            highlightColor={`rgb(var(--skeleton-highlight))`} 
-          />
+          <div className="w-[160px] sm:w-[160px] md:w-[200px]">
+            <Skeleton 
+              height={225}
+              className="rounded-lg"
+              baseColor={`rgb(var(--skeleton-base))`} 
+              highlightColor={`rgb(var(--skeleton-highlight))`} 
+            />
+          </div>
           
           {/* Nombre */}
           <Skeleton 
