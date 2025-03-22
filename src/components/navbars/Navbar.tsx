@@ -39,7 +39,7 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink href="/dragonball" className={pathname === "/dragonball" ? "active" : ""}>
-                Dragon Ball
+                Personajes
               </NavLink>
             </li>
           </NavLinks>

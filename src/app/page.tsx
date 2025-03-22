@@ -11,7 +11,7 @@ export default function Home() {
 
       <div className="w-full max-w-[220px]">
         <Link href="/dragonball" passHref legacyBehavior>
-          <DragonBallButton>Characters</DragonBallButton>
+          <DragonBallButton>Personajes</DragonBallButton>
         </Link>
 
       </div>
