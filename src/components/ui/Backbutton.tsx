@@ -9,9 +9,9 @@ const BackButton = () => {
   return (
     <button
       onClick={() => router.back()}
-      className="flex items-center text-sm text-foreground hover:underline mb-4"
+      className="flex items-center text-sm text-foreground hover:underline mb-3"
     >
-      <ArrowLeft className="mr-2" size={18} />
+      <ArrowLeft className="mr-3" size={18} />
       Ir atrás
     </button>
   );

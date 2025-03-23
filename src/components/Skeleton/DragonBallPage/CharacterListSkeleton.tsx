@@ -21,17 +21,17 @@ const CharacterListSkeleton: React.FC = () => {
           <div className="w-[130px] h-[180px] sm:w-[169px] sm:h-[180px]">
             <Skeleton
               className="w-full h-full rounded-lg object-contain "
-              baseColor={`rgb(var(--skeleton-base))`}
-              highlightColor={`rgb(var(--skeleton-highlight))`}
+              baseColor={`rgba(var(--skeleton-base), 0.3)`}
+              highlightColor={`rgba(var(--skeleton-highlight), 0.5)`}
             />
           </div>
 
           <Skeleton 
             width={100}
             height={20}
-            className="mt-2 rounded"
-            baseColor={`rgb(var(--skeleton-base))`} 
-            highlightColor={`rgb(var(--skeleton-highlight))`} 
+            className="mt-4"
+            baseColor={`rgba(var(--skeleton-base), 0.3)`}
+            highlightColor={`rgba(var(--skeleton-highlight), 0.5)`}
           />
         </div>
       ))}

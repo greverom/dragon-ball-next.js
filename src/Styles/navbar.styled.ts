@@ -1,17 +1,5 @@
 import styled from "styled-components";
 import Link from "next/link";
-import { keyframes } from "styled-components";
-
-const slideDown = keyframes`
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-`;
 
 export const NavbarContainer = styled.nav`
   position: fixed;
@@ -20,7 +8,7 @@ export const NavbarContainer = styled.nav`
   width: 100%;
   padding: 1.2rem;
   z-index: 50;
-  background: rgba(255, 255, 255, 0.2);
+ background: rgba(var(--background));
   backdrop-filter: blur(12px);
 `;
 
@@ -82,7 +70,7 @@ export const MobileButton = styled.button`
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: rgb(var(--text-color));
   cursor: pointer;
 
   @media (max-width: 768px) {
@@ -100,12 +88,11 @@ export const MobileMenuContainer = styled.ul`
   left: 0;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.6); 
+  background: rgba(0, 0, 0, 0.7); 
   padding: 2rem;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   z-index: 100; 
   text-align: left;
-  animation: ${slideDown} 0.3s ease-in-out;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -118,8 +105,8 @@ export const MobileMenuContainer = styled.ul`
 
 export const CloseButton = styled.button`
   position: absolute;
-  top: 1.4rem;
-  right: 1.6rem;
+  top: 1.6rem;
+  right: 1.7rem;
   background: none;
   border: none;
   color: white;

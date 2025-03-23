@@ -20,7 +20,7 @@ const SearchNavbar = () => {
           placeholder="Buscar personaje..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="w-full px-3 py-2 rounded-lg bg-white dark:bg-gray-100 text-black"
+          className="w-full px-3 py-2 rounded-lg bg-white dark:bg-gray-100 text-black border border-[rgba(var(--border-color), 0.4)]"
         />
       </form>
 

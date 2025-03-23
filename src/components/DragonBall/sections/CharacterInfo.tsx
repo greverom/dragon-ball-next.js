@@ -27,7 +27,7 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
         />
         </div>
 
-        <div className="flex-1 px-0 md:px-7 text-justify md:text-left">
+        <div className="w-full md:flex-1 px-0 md:px-7 text-justify md:text-left">
           <h1 className="text-2xl md:text-3xl font-bold flex flex-col md:flex-row items-start md:items-end mb-4">
             {character.name}
             <span className="ml-4 text-[rgb(var(--secondary-foreground))] text-sm font-thin">
@@ -37,7 +37,7 @@ export const CharacterInfo: React.FC<CharacterInfoProps> = ({ character }) => {
 
           <p><strong>Género:</strong> {character.gender}</p>
           <p><strong>Ki Máximo:</strong> {character.maxKi}</p>
-          <p className="text-md mb-3 leading-relaxed">{character.description}</p>
+          <p className="text-sm sm:text-base mb-3 leading-relaxed">{character.description}</p>
         </div>
       </div>
     </div>

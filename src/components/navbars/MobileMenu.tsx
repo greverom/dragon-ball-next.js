@@ -33,7 +33,7 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
       </li>
       <li>
         <NavLink href="/dragonball" className={pathname === "/dragonball" ? "active" : ""} onClick={toggleMenu} $isMobile>
-          Dragon Ball
+          Personajes
         </NavLink>
       </li>
     </MobileMenuContainer>

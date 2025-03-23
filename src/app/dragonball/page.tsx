@@ -14,12 +14,11 @@ const DragonBallPage = () => {
     <CharacterDetailBackground />
   
     <div className="bg-background text-foreground min-h-screen flex flex-col p-10 transition-colors w-full">
-      <header className="w-full max-w-7xl mx-auto">
+      <header className="w-full max-w-7xl">
         <BackButton />
-
       </header>
 
-      <main className="w-full max-w-8xl sm:mx-auto py-10 px-0">
+      <main className="w-full max-w-7xl sm:mx-auto py-10 px-0">
         <Suspense fallback={<CharacterListSkeleton />}>
           <CharacterList />
         </Suspense>
