@@ -35,24 +35,6 @@ const CharacterInfoSkeleton = () => {
           />
           <Skeleton 
             height={20} 
-            width="30%" 
-            baseColor={`rgb(var(--skeleton-base))`} 
-            highlightColor={`rgb(var(--skeleton-highlight))`}
-          />
-          <Skeleton 
-            height={20} 
-            width="100%" 
-            baseColor={`rgb(var(--skeleton-base))`} 
-            highlightColor={`rgb(var(--skeleton-highlight))`}
-          />
-          <Skeleton 
-            height={20} 
-            width="100%" 
-            baseColor={`rgb(var(--skeleton-base))`} 
-            highlightColor={`rgb(var(--skeleton-highlight))`}
-          />
-          <Skeleton 
-            height={20} 
             width="100%" 
             baseColor={`rgb(var(--skeleton-base))`} 
             highlightColor={`rgb(var(--skeleton-highlight))`}

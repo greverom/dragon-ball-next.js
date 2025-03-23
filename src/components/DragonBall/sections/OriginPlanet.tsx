@@ -14,7 +14,7 @@ export const OriginPlanet: React.FC<OriginPlanetProps> = ({ character }) => {
   if (!character?.originPlanet) return <OriginPlanetSkeleton />;
 
   return (
-    <div className="max-w-5xl mt-8 text-center bg-card text-card-foreground p-5">
+    <div className="w-full sm:max-w-6xl mt-8 text-center bg-card text-card-foreground ">
       <h2 className="text-2xl font-bold mb-4">Planeta de Origen</h2>
       
       <div className="flex flex-col md:flex-row items-center justify-center">

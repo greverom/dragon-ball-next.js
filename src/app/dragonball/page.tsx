@@ -19,8 +19,8 @@ const DragonBallPage = () => {
     <div className="bg-background text-foreground min-h-screen flex flex-col p-10 transition-colors w-full">
       <header className="w-full max-w-7xl mx-auto">
         <BackButton />
-        <div className="bg-white/10 dark:bg-white/40 backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
-                        shadow-lg p-2 rounded-full text-center max-w-md mx-auto mt-6">
+        <div className="bg-white/10 dark:bg-white/28 backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
+                        shadow-lg p-2 rounded-full text-center max-w-sm mx-auto mt-4">
           <Suspense fallback={<DragonBallTitleSkeleton />}>
             {isLoading ? (
               <DragonBallTitleSkeleton />
@@ -31,7 +31,7 @@ const DragonBallPage = () => {
         </div>
       </header>
 
-      <main className="w-full max-w-7xl sm:mx-auto py-10 px-0">
+      <main className="w-full max-w-8xl sm:mx-auto py-10 px-0">
         <Suspense fallback={<CharacterListSkeleton />}>
           <CharacterList />
         </Suspense>

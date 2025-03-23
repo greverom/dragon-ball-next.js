@@ -12,7 +12,7 @@ const Pagination = () => {
   };
 
   return (
-    <div className="bg-white/10 dark:bg-white/45 backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
+    <div className="bg-white/10 dark:bg-white/25 backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
                     shadow-lg p-3 rounded-xl mt-8 max-w-xl mx-auto">
       <div className="flex flex-col items-center space-y-3 text-sm sm:text-base">
         
@@ -25,7 +25,8 @@ const Pagination = () => {
           value={limit === 0 ? "all" : limit}
           onChange={handleLimitChange}
           className="border border-[rgb(var(--border-color))] px-2 py-1 rounded-lg transition-colors
-            bg-orange-500 text-white hover:brightness-90 text-xs sm:text-sm"
+                  bg-orange-500 text-white hover:brightness-80 opacity-60 text-xs sm:text-sm
+                  focus:outline-none focus:ring-0"
         >
           <option value="4">4</option>
           <option value="8">8</option>
@@ -41,7 +42,7 @@ const Pagination = () => {
             onClick={() => setPage(Math.max(page - 1, 1))}
             disabled={page === 1}
             className="px-3 py-1 sm:px-4 sm:py-2 rounded-lg transition-colors
-              bg-orange-500 text-white hover:bg-orange-600 disabled:opacity-50 text-sm sm:text-base"
+              bg-orange-500 text-white hover:bg-orange-500 disabled:opacity-40 opacity-80 text-sm sm:text-base"
           >
             Anterior
           </button>
@@ -54,7 +55,7 @@ const Pagination = () => {
             onClick={() => setPage(Math.min(page + 1, totalPages))}
             disabled={page === totalPages}
             className="px-3 py-1 sm:px-4 sm:py-2 rounded-lg transition-colors
-              bg-orange-500 text-white hover:bg-orange-600 disabled:opacity-50 text-sm sm:text-base"
+              bg-orange-500 text-white hover:bg-orange-600 disabled:opacity-40 opacity-80 text-sm sm:text-base"
           >
             Siguiente
           </button>

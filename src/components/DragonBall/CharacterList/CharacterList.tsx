@@ -19,7 +19,7 @@ const CharacterList = () => {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 mb-6">
           {characters.map((character) => (
             <Link href={`/dragonball/${character.id}`} key={character.id}>
-              <div className="bg-white/10 dark:bg-white/50 backdrop-blur-md border 
+              <div className="bg-white/10 dark:bg-white/30 backdrop-blur-md border 
                     border-[rgba(255,255,255,0.2)] shadow-xl 
                     p-2 sm:p-4 flex flex-col justify-center items-center 
                     cursor-pointer rounded-xl transition-transform duration-300 hover:scale-[1.02]
