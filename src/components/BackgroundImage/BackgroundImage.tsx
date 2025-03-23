@@ -13,16 +13,7 @@ const BackgroundImage = () => {
         fill
         priority
         quality={75}
-        className="hidden sm:block object-cover brightness-[0.7] opacity-80 fade-mask"
-      />
-
-      <Image
-        src="/images/fondo-dragonball-2.webp"
-        alt="Fondo Dragon Ball Mobile"
-        fill
-        priority
-        quality={75}
-        className="block sm:hidden object-cover brightness-[0.7] opacity-80 fade-mask"
+        className="object-cover brightness-[0.7] opacity-80 fade-mask"
       />
     </div>
   );

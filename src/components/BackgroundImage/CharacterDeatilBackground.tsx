@@ -12,7 +12,7 @@ const CharacterDetailBackground = () => {
         fill
         priority
         quality={75}
-        className="object-cover opacity-75 brightness-[0.8]"
+        className="hidden object-cover"
         style={{ objectPosition: "top" }}
       />
       

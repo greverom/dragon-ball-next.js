@@ -11,7 +11,7 @@ const BackButton = () => {
       onClick={() => router.back()}
       className="flex items-center text-sm text-foreground hover:underline mb-3"
     >
-      <ArrowLeft className="mr-3" size={18} />
+      <ArrowLeft className="mr-1" size={15} />
       Ir atrás
     </button>
   );

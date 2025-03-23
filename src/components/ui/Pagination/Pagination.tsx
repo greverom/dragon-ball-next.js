@@ -12,12 +12,11 @@ const Pagination = () => {
   };
 
   return (
-    <div className="bg-white/10 dark:bg-white/25 backdrop-blur-md border border-[rgba(255,255,255,0.2)] 
-                    shadow-lg p-3 rounded-xl mt-8 max-w-xl mx-auto">
+    <div className="mt-8 max-w-xl mx-auto px-2">
       <div className="flex flex-col items-center space-y-3 text-sm sm:text-base">
         
       <div className="flex items-center justify-center space-x-2 overflow-x-auto whitespace-nowrap">
-        <label htmlFor="limit" className="font-medium text-xs sm:text-sm">
+        <label htmlFor="limit" className="font-small text-xs sm:text-sm">
           Mostrar:
         </label>
         <select
@@ -25,8 +24,8 @@ const Pagination = () => {
           value={limit === 0 ? "all" : limit}
           onChange={handleLimitChange}
           className="border border-[rgb(var(--border-color))] px-2 py-1 rounded-lg transition-colors
-                  bg-orange-500 text-white hover:brightness-80 opacity-60 text-xs sm:text-sm
-                  focus:outline-none focus:ring-0"
+                    bg-orange-500 text-white hover:brightness-90 opacity-60 text-xs sm:text-sm
+                    focus:outline-none focus:ring-0"
         >
           <option value="4">4</option>
           <option value="8">8</option>
@@ -34,7 +33,7 @@ const Pagination = () => {
           <option value="16">16</option>
           <option value="58">Todos</option>
         </select>
-        <span className="font-medium text-xs sm:text-sm">personajes por página</span>
+        <span className="font-small text-xs sm:text-sm">personajes por página</span>
       </div>
   
         <div className="flex flex-wrap items-center justify-center space-x-2 sm:space-x-4">
@@ -47,7 +46,7 @@ const Pagination = () => {
             Anterior
           </button>
   
-          <span className="font-medium">
+          <span className="font-small text-xs sm:text-sm">
             Página {page} de {totalPages}
           </span>
   

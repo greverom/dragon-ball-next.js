@@ -10,7 +10,7 @@ const CharacterDetailPage = () => {
 
   const renderBackWithMessage = (message: string) => (
     <div className="flex flex-col">
-      <header className="w-full max-w-7xl md:px-0">
+      <header className="w-full">
         <BackButton />
       </header>
       <p className="text-center text-red-500 text-lg font-semibold mt-6">{message}</p>
@@ -23,8 +23,8 @@ const CharacterDetailPage = () => {
     return renderBackWithMessage("No se pudo cargar el personaje.");
 
   return (
-    <div className="bg-background text-foreground min-h-screen flex flex-col py-10 p-3 transition-colors w-full">
-      <header className="w-full max-w-7xl pl-7">
+    <div className="bg-background text-foreground min-h-screen flex flex-col p-5 py-10  md:px-5 transition-colors w-full">
+      <header className="w-full max-w-7xl">
         <BackButton />
       </header>
 
