@@ -27,12 +27,12 @@ const MobileMenu = ({ isOpen, toggleMenu }: MobileMenuProps) => {
       </CloseButton>
 
       <li>
-        <NavLink href="/" className={pathname === "/" ? "active" : ""} onClick={toggleMenu}>
+        <NavLink href="/" className={pathname === "/" ? "active" : ""} onClick={toggleMenu} $isMobile>
           Inicio
         </NavLink>
       </li>
       <li>
-        <NavLink href="/dragonball" className={pathname === "/dragonball" ? "active" : ""} onClick={toggleMenu}>
+        <NavLink href="/dragonball" className={pathname === "/dragonball" ? "active" : ""} onClick={toggleMenu} $isMobile>
           Dragon Ball
         </NavLink>
       </li>

@@ -18,9 +18,10 @@ export const NavbarContainer = styled.nav`
   top: 0;
   left: 0;
   width: 100%;
-  background: linear-gradient(to right, #ff6a00, #4a5568);
-  padding: 1rem;
+  padding: 1.2rem;
   z-index: 50;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
 `;
 
 export const NavbarContent = styled.div`
@@ -46,15 +47,15 @@ export const NavLinks = styled.ul`
   }
 `;
 
-export const NavLink = styled(Link)`
-  color: white;
+export const NavLink = styled(Link)<{ $isMobile?: boolean }>`
+  color: ${({ $isMobile }) => ($isMobile ? "white" : "rgb(var(--text-color))")};
   padding: 0.5rem 1rem;
   border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   &.active {
@@ -65,7 +66,7 @@ export const NavLink = styled(Link)`
       bottom: 0;
       width: 100%;
       height: 2px;
-      background-color: white;
+      background-color: ${({ $isMobile }) => ($isMobile ? "white" : "rgb(var(--text-color))")};
     }
   }
 `;

@@ -13,14 +13,14 @@ const CharacterListSkeleton: React.FC = () => {
       {Array.from({ length: limit }).map((_, index) => (
         <div 
           key={index} 
-          className="bg-white/10 dark:bg-white/30 backdrop-blur-md border 
-                     border-[rgba(255,255,255,0.2)] shadow-xl 
+          className="bg-white/10 dark:bg-white/10 backdrop-blur-md border 
+                     border-[rgba(255,255,255,0.2)]
                      p-2 sm:p-4 flex flex-col justify-center items-center 
-                     cursor-pointer rounded-xl w-[145px] sm:w-auto min-h-[240px] sm:min-h-[270px]"
+                     cursor-pointer rounded-xl w-[140px] sm:w-auto min-h-[240px] sm:min-h-[270px]"
         >
-          <div className="w-[130px] h-[160px] sm:w-[169px] sm:h-[180px]">
+          <div className="w-[130px] h-[180px] sm:w-[169px] sm:h-[180px]">
             <Skeleton
-              className="w-full h-full rounded-lg object-contain image-blur"
+              className="w-full h-full rounded-lg object-contain "
               baseColor={`rgb(var(--skeleton-base))`}
               highlightColor={`rgb(var(--skeleton-highlight))`}
             />
